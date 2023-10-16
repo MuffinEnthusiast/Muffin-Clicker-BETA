@@ -1,0 +1,355 @@
+<!doctype html>
+<html lang="en">
+<head>
+<title>Muffin Clicker V0.1.3 FINAL</title>
+<meta charset="utf-8" content="width=device-width, initial-scale=1">
+<link rel="icon" type="image/x-icon" href="favicon.ico">	
+</head>
+<script>
+
+// Created by data_expunged - March 2023 - Present
+// Variables
+
+var muffins = 0;
+var muffinsPerSecond = 0;
+var muffinsPerClick = 1;
+
+
+var betterClickerCost = 20;
+var ovencost = 30;
+var farmCost = 1001;
+var factoryCost = 10000;
+
+var betterOvens = 0;
+var betterClickers = 0;
+
+let clickerImage = document.getElementById("muffinclickerimg")
+
+// ALERT!! YOUR PROGRESS IS NOT SAVED!!
+// But it will be soon!
+
+window.alert("This game is in early alpha. All content is subject to change, and you cannot save. It is also advised to check the guide. (howtoplay.html)");
+
+function increment() {
+
+	muffins += muffinsPerClick;
+	
+	document.getElementById("muffinCounter").innerText = muffins + " muffins";
+
+}
+
+function CheckForNegative() {
+ 
+ if (muffins <= -1)
+ {
+ 	muffins = 0;
+ }
+ 
+}
+
+function buyOvenUpgrade() {
+
+	if (muffins >= ovencost)
+	{
+		CheckForNegative();
+	 	muffinsPerSecond += 1;
+		muffins -= ovencost;
+		
+		ovencost += 10;
+		
+		document.getElementById("muffinPerSecond").innerText = muffinsPerSecond;
+		
+
+	}
+	else
+	{
+		errorPlay();
+	}
+
+}
+
+function buyFarmUpgrade() {
+
+	if (muffins >= 1000)
+	{
+		muffins -= 1000;
+	 	muffinsPerSecond += 20;
+		farmCost += 120;
+		
+		document.getElementById("muffinPerSecond").innerText = muffinsPerSecond;
+		
+		CheckForNegative();
+	}
+	else
+	{
+		errorPlay();
+	}
+
+}
+
+function buyFactoryUpgrade() {
+
+	if (muffins >= factoryCost)
+	{
+		muffins -= 10000;
+		muffinsPerSecond += 50;
+		muffinsPerClick += 5;
+		factoryCost += 1000;
+		
+		CheckForNegative();
+	}
+	else
+	{
+		errorPlay();
+	}
+
+}
+
+
+function buyHandsUpgrade() {
+ 
+ 	if (muffins >= 20)
+	{
+		muffinsPerClick += 1;
+		document.getElementById("muffinsPerClick").innerText = muffinsPerClick;
+		muffins -= 20;
+		betterClickerCost += 15
+		
+		betterHands++;
+	}
+	else
+	{
+		errorPlay();
+	}
+ 
+}
+
+function errorPlay() {
+
+	let audio = new Audio("chord.mp3");
+	audio.play();
+	window.alert("You cannot buy this item!")
+
+}
+
+function help() {
+
+	console.log("Player requested in-game help.");
+	window.alert("How to Play: Click the muffin, it's that easy! Buy upgrades to increase your muffin production, and eventually, you'll get the ending!");
+	window.alert("Credits: buttons2676 - Lead Developer");
+	window.alert("Credits: <namehiddenuntilnotice> - Lead Ideas");
+
+}
+
+
+setInterval(function() {
+
+	muffins += muffinsPerSecond;
+	document.getElementById("muffinCounter").innerText = muffins + " muffins";
+
+}, 1000)
+
+setInterval(function() {
+
+	document.getElementById("muffinCounter").innerText = muffins + " muffins";
+
+}, 100)
+
+document.addEventListener('keydown', function(event) {
+    if(event.keyCode == 219) {
+        muffins += 100000;
+		  muffinsPerClick += 1000;
+		  muffinsPerSecond += 1000;
+		  document.getElementById("muffinsPerClick").innerText = muffinsPerClick;
+    }
+    else if(event.keyCode == 39) {
+        alert('Right was pressed');
+    }
+});
+
+</script>
+<style>
+
+body {
+ background-color: lightblue;
+ font-family: Courier New;
+ font-size: 35px;
+}
+
+.muffinCounter {
+ text-align: center;
+ position: sticky;
+}
+
+.clickButton1 {
+ cursor: pointer;
+ text-align: center;
+ background-color: red;
+}
+
+.clickButton1:active {
+	box-shadow: 0 4px 8px 0 #666666;
+	-ms-transform: scale(1.1);
+  -webkit-transform: scale(1.1); 
+  transform: scale(1.1); 
+}
+
+
+.muffinimg {
+ font-family: Arial;
+}
+
+.muffinimg:active {
+	-ms-transform: scale(1.1);
+  -webkit-transform: scale(1.1); 
+  transform: scale(1.1); 
+}
+
+.muffinimg:hover {
+	-ms-transform: scale(1.1);
+  -webkit-transform: scale(1.1); 
+  transform: scale(1.1); 
+}
+
+.heading {
+ color: black;
+ font-family: Courier New;
+ text-align: center;
+ font-size: 32px;
+ font-weight: bold;
+ padding: 32px;
+ border-radius: 14px;
+ background-color: navy;
+}
+
+.OvenRight {
+ position: absolute;
+ top: 150px;
+ right: 45px;
+}
+
+.OvenRight:hover {
+ 	position: absolute;
+ 	top: 150px;
+ 	right: 45px;
+ 	-ms-transform: scale(1.2);
+  -webkit-transform: scale(1.2); 
+  transform: scale(1.2);
+}
+
+.CursorRight {
+ position: absolute;
+ top: 290px;
+ right: 50px;
+ border-radius: 4px;
+}
+
+.CursorRight:hover {
+ 	position: absolute;
+ 	top: 290px;
+ 	right: 50px;
+	border-radius: 6px;
+ 	-ms-transform: scale(1.2);
+  -webkit-transform: scale(1.2); 
+  transform: scale(1.2);
+}
+
+.farmRight {
+ position: absolute;
+ top: 425px;
+ right: 50px;
+ border-radius: 6px;
+}
+
+.farmRight:hover {
+ position: absolute;
+ top: 425px;
+ right: 50px;
+  border-radius: 6px;
+ -ms-transform: scale(1.2);
+ -webkit-transform: scale(1.2); 
+ transform: scale(1.2);
+}
+
+.factoryRight {
+ position: absolute;
+ top: 550px;
+ right: 50px;
+ border-radius: 6px;
+}
+
+.factoryRight:hover {
+ position: absolute;
+ top: 550px;
+ right: 50px;
+  border-radius: 6px;
+ -ms-transform: scale(1.2);
+ -webkit-transform: scale(1.2); 
+ transform: scale(1.2);
+}
+
+h3 {
+ color: black;
+ font-size: 27px;
+}
+
+.moddedp {
+ font-size: 24px;
+ font-family: Courier New;
+}
+
+.questionMarkButton {
+
+	font-family: Courier New;
+	background-color: lightgray;
+	border-radius: 30px;
+	font-size: 30px;
+
+}
+
+.questionMarkButton:hover {
+	-ms-transform: scale(1.1);
+  -webkit-transform: scale(1.1); 
+  transform: scale(1.1); 
+}
+
+.questionMarkButton:active {
+	-ms-transform: scale(1.1);
+  -webkit-transform: scale(1.1); 
+  transform: scale(1.1); 
+}
+
+</style>
+<body>
+
+<h1 class="heading">Muffin Clicker - V0.1.3A FINAL</h1>
+
+<left>
+
+<p id="muffinCounter"><span id="showMuffins">0</p>
+<p>Muffins Per Second (MPS): <span id="muffinPerSecond">0</p>
+<p class="moddedp">Muffins Per Click (MPC): <span id="muffinsPerClick">0</p>
+<br/>
+<img id="muffinclickerimg" class="muffinimg" src="muffinnew.png" height="250" width="250" onclick="increment()"</img>
+<br/>
+</left>
+
+<right>
+
+<img src="newovenv3.png" class="OvenRight" height="115" width="115s" onclick="buyOvenUpgrade()"</img>
+<img src="download.png" class="CursorRight" height="100" width="100" onclick="buyHandsUpgrade()"</img>
+<img src="farmnew.png" class="farmRight" height="100" width="100" onclick="buyFarmUpgrade()"</img>
+<img src="factory.png" class="factoryRight" height="100" width="100" onclick="buyFactoryUpgrade()"</img>
+
+</right>
+<center>
+
+<br/>
+<h3 id="itemHover">10/16/2023: Some quality of life updates have been added for the sake of your entertainment.</h3>
+<h3 id="itemHover">Note: This will be the <u>last</u> version of alpha.</h3>
+<br/>
+<button class="questionMarkButton" onclick="help()">Help</button>
+</center>
+
+</body>
+</html>
