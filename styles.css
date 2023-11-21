@@ -1,0 +1,150 @@
+body {
+ background-color: lightblue;
+ font-family: Courier New;
+ font-size: 35px;
+}
+
+.muffinCounter {
+ text-align: center;
+ position: sticky;
+}
+
+.clickButton1 {
+ cursor: pointer;
+ text-align: center;
+ background-color: red;
+}
+
+.clickButton1:active {
+	box-shadow: 0 4px 8px 0 #666666;
+	-ms-transform: scale(1.1);
+  -webkit-transform: scale(1.1); 
+  transform: scale(1.1); 
+}
+
+
+.muffinimg {
+ font-family: Arial;
+}
+
+.muffinimg:active {
+	-ms-transform: scale(1.1);
+  -webkit-transform: scale(1.1); 
+  transform: scale(1.1); 
+}
+
+.muffinimg:hover {
+	-ms-transform: scale(1.1);
+  -webkit-transform: scale(1.1); 
+  transform: scale(1.1); 
+}
+
+.heading {
+ color: black;
+ font-family: Courier New;
+ text-align: center;
+ font-size: 32px;
+ font-weight: bold;
+ padding: 32px;
+ border-radius: 14px;
+ background-color: navy;
+}
+
+.OvenRight {
+ position: absolute;
+ top: 150px;
+ right: 45px;
+ border-radius: 6px;
+}
+
+.OvenRight:hover {
+ 	position: absolute;
+ 	top: 150px;
+ 	right: 45px;
+ 	-ms-transform: scale(1.2);
+  -webkit-transform: scale(1.2); 
+  transform: scale(1.2);
+   border-radius: 8px;
+}
+
+.CursorRight {
+ position: absolute;
+ top: 290px;
+ right: 50px;
+ border-radius: 6px;
+}
+
+.CursorRight:hover {
+ 	position: absolute;
+ 	top: 290px;
+ 	right: 50px;
+	border-radius: 8px;
+ 	-ms-transform: scale(1.2);
+  -webkit-transform: scale(1.2); 
+  transform: scale(1.2);
+}
+
+.farmRight {
+ position: absolute;
+ top: 425px;
+ right: 50px;
+ border-radius: 6px;
+}
+
+.farmRight:hover {
+ position: absolute;
+ top: 425px;
+ right: 50px;
+  border-radius: 8px;
+ -ms-transform: scale(1.2);
+ -webkit-transform: scale(1.2); 
+ transform: scale(1.2);
+}
+
+.factoryRight {
+ position: absolute;
+ top: 550px;
+ right: 50px;
+ border-radius: 6px;
+}
+
+.factoryRight:hover {
+ position: absolute;
+ top: 550px;
+ right: 50px;
+  border-radius: 8px;
+ -ms-transform: scale(1.2);
+ -webkit-transform: scale(1.2); 
+ transform: scale(1.2);
+}
+
+h3 {
+ color: black;
+ font-size: 27px;
+}
+
+.moddedp {
+ font-size: 24px;
+ font-family: Courier New;
+}
+
+.questionMarkButton {
+
+	font-family: Courier New;
+	background-color: lightgray;
+	border-radius: 30px;
+	font-size: 30px;
+
+}
+
+.questionMarkButton:hover {
+	-ms-transform: scale(1.1);
+  -webkit-transform: scale(1.1); 
+  transform: scale(1.1); 
+}
+
+.questionMarkButton:active {
+	-ms-transform: scale(1.1);
+  -webkit-transform: scale(1.1); 
+  transform: scale(1.1); 
+}
